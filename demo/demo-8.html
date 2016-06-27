@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo-8</title>
+    <script src="../libs/react/react.js"></script>
+    <script src="../libs/react/react-dom.js"></script>
+    <script src="../libs/react/browser.min.js"></script>
+    <script src="../libs/react/jquery.min.js"></script>
+</head>
+<body>
+<div id="demo8"></div>
+<script type="text/babel">
+    var Input = React.createClass({
+        getInitialState : function () {
+            return {value : "hello world"};
+        },
+        handleChange:function (event){
+            this.setState({
+                value:event.target.value
+            });
+        },
+        render:function (){
+            var value = this.state.value;
+            return (
+                    <div>
+                        <input value={value} onChange={this.handleChange} />
+                        <p>{value}</p>
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(<Input/>, document.getElementById('demo8'));
+</script>
+</body>
+</html>

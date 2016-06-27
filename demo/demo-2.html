@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo-2</title>
+    <script src="../libs/react/react.js"></script>
+    <script src="../libs/react/react-dom.js"></script>
+    <script src="../libs/react/browser.min.js"></script>
+</head>
+<body>
+<div id="demo2"></div>
+<script type="text/babel">
+    var names = ["aine","jessic",'kassic'];
+    ReactDOM.render(
+            <div>
+                {
+                        names.map(function (name){
+                            return <h2>hello,{name}</h2>
+                        })
+                }
+            </div>,
+            document.getElementById('demo2')
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑表单界面</title>
+    <link rel="stylesheet" href="../libs/jquery/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../css/edit.css" />
+</head>
+<body>
+    <!--编辑界面-->
+    <div class="outer-wrapper">
+        <span class="edit-button" onclick="goToPreview()">预览</span>
+        <div class="controls-wrapper">
+            <!--<div class="item-wrapper">-->
+                <!--<label for="text">文本</label>-->
+                <!--<input id="text" class="text-input" />-->
+                <!--<span class="common-button delete-button">一</span>-->
+            <!--</div>-->
+            <!--<div class="item-wrapper">-->
+                <!--<label for="date">时间</label>-->
+                <!--&lt;!&ndash;<input type="date" id="date" class="text-input" />&ndash;&gt;-->
+                <!--<input type="text" name="date" id="date" class="text-input" />-->
+                <!--<span class="common-button delete-button">一</span>-->
+            <!--</div>-->
+        </div>
+        <span class="common-button add-button" onclick="popDialog()">+</span>
+        <!--弹出框-->
+        <div class="popup-dialog">
+            <div class="tip-text">请选择需要添加的表单元素：</div>
+            <form id="selectList" method="post">
+                <input type="radio" name="formElement" value="文本" class="radio-input">文本
+                <br />
+                <input type="radio" name="formElement" value="日期" class="radio-input">日期
+                <br />
+                <input type="button" class="edit-button" value="选择" onclick="addItem()" />
+            </form>
+        </div>
+    </div>
+
+    <!--编辑界面-->
+    <script id="editTemplate" type="text/html">
+        <span class="edit-button" onclick="changeTemplate('preview')">预览</span>
+        <div class="controls-wrapper">
+            <div class="item-wrapper">
+            <label for="text">文本</label>
+            <input id="text" class="text-input" />
+            <span class="common-button delete-button">一</span>
+            </div>
+            <div class="item-wrapper">
+            <label for="date">时间</label>
+            <!--<input type="date" id="date" class="text-input" />-->
+            <input type="text" name="date" id="date" class="text-input" />
+            <span class="common-button delete-button">一</span>
+            </div>
+        </div>
+        <span class="common-button add-button" onclick="popDialog()">+</span>
+        <!--弹出框-->
+        <div class="popup-dialog">
+            <div class="tip-text">请选择需要添加的表单元素：</div>
+            <form id="selectList" method="post">
+                <input type="radio" name="formElement" checked value="文本" class="radio-input">文本
+                <br />
+                <input type="radio" name="formElement" value="日期" class="radio-input">日期
+                <br />
+                <input type="button" class="edit-button" value="选择" onclick="addItem()" />
+            </form>
+        </div>
+    </script>
+
+    <!--预览界面-->
+    <script id="previewTemplate" type="text/html">
+        <span class="edit-button" onclick="changeTemplate('edit')">编辑</span>
+        <form id="previewForm" method="post">
+            <div class="controls-wrapper"></div>
+            <input type="button" value="提交" class="edit-button" />
+        </form>
+    </script>
+    <script src="../libs/jquery/jquery-3.0.0.min.js"></script>
+    <script src="../libs/jquery/jquery-ui.min.js"></script>
+    <script src="../js/edit.js"></script>
+</body>
+</html>
